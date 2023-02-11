@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body bgcolor="#98d1f5">
+    <form action="/add" method="post">
+        <select name="selected">
+            {% for i in all_data %}
+                <option style="color : #504e54">{{ i }}</option>
+            {% endfor %}
+        </select>
+        <select name = 'selected'>
+            {% for a in all_data1 %}
+                <option style="color : red">{{ a }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="ADD">
+
+    </form>
+    <form action=" /message" method="post">
+        <input name="mes" type="text" value="Type text">
+    </form>
+    <form action=" /delete " method='post' >
+        {% for i in gr_lis %}
+            <input type="checkbox" name = 'selected' id = '{{i}}' value = '{{i}}'>
+            <label for = '{{i}}'>{{ i }}</label>
+        {% endfor %}
+            <input type = 'submit' value="DELETE">
+    </form>
+</body>
+</html>
+<!--Видаливши стару базу даних, в файлі database, створити ще одну таблицю, де так само буде дві колонки - id та name.-->
+<!--Додайте на головну сторінку ще одну форму та маршрут, який буде цю форму обробляти. В формі зробіть два інпута(один text, інший - submit). -->
+<!--Додавайте цим інпутом дані до бд та відображайте їх в довільній формі.-->
+<!--Це можуть бути якісь замітки користувача, повідомлення або будь-що, чого би вам хотілось додати.-->
